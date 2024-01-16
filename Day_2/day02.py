@@ -9,7 +9,7 @@ config = SparkConf().setAppName("Spark Tutor").setMaster("local[2]")
 
 sc = SparkContext(conf=config)
 
-rdd = sc.textFile("G:/demoSpark/Day_2/data/test.txt")
+rdd = sc.textFile("data/test.txt")
 rdd2 = rdd.flatMap(lambda x: x.split(" "))
 rdd3 = rdd2.map(lambda x: (x,1))
 rdd4 = rdd3.reduceByKey(lambda a,b: a+b)
